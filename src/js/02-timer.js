@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr";
-import "flatpickr/dist/themes/dark.css";
+import "flatpickr/dist/themes/material_orange.css";
 
 const timer = document.querySelector(".timer");
 const daysValue = timer.querySelector('[data-days]');
@@ -18,6 +18,7 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         if (selectedDates[0] < new Date()) {
+
             window.alert("Please choose a date in the future");
             startBtn.disabled = true;
         } else {
