@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
-import "flatpickr/dist/themes/material_orange.css";
+import "flatpickr/dist/flatpickr.min.css";
+import Notiflix from 'notiflix';
 
 const timer = document.querySelector(".timer");
 const daysValue = timer.querySelector('[data-days]');
@@ -18,8 +19,7 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         if (selectedDates[0] < new Date()) {
-
-            window.alert("Please choose a date in the future");
+            Notiflix.Notify.failure("Please choose a date in the future");
             startBtn.disabled = true;
         } else {
             startBtn.disabled = false;
